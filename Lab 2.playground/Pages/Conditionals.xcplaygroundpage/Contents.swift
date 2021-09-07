@@ -6,7 +6,7 @@
 print("How's it going?")
 
 // Set your current mood as a String below
-var mood : String = ""
+var mood : String = "Good"
 
 /*:
 - experiment:
@@ -15,8 +15,15 @@ If the reply is "Good" print Great!
 Otherwise, if you said "Bad", print Oh no!
 In all other cases, I reply "I see..."
 */
-
-
+if mood == "Good" {
+    print("Great!")
+}
+else if mood == "Bad" {
+    print("Oh no!")
+}
+else {
+    print("I see...")
+}
 /*:
 ### Combining Conditionals
  
@@ -40,6 +47,9 @@ var time : Int = 0
 
 
 
+if mood == "Good" && time > 7 {
+    print("Great!")
+}
 /*:
 Everyone says it's great when work is over, despite their mood.
 In this case we want to reply "Great!" when your mood is "Good" or the time is greater than 17 (5pm).
@@ -75,7 +85,14 @@ if pet == "bunny" || pet == "puppy" {
  - experiment:
  Write a function named stringToEmoji that takes a parameter word of type  String and returns a Character. If the word is "happy" return "😀" otherwise return "🤔".
 */
-
+func stringToEmoji (word: String) -> Any {
+    if word == "happy"{
+        return("😀")
+    }
+    else {
+        return("🤔")
+    }
+}
 /*:
  Test your function like this:
  
@@ -87,6 +104,11 @@ if pet == "bunny" || pet == "puppy" {
  print(response2) // should be 😀
  ```
 */
+//let emoji1 = stringToEmoji(word: "meh")
+//let emoji2 = stringToEmoji(word: "happy")
+//
+//print(emoji1) // should be 🤔
+//print(emoji2) // should be 😀
 
 
 
@@ -105,9 +127,28 @@ otherwise -> "🤔"
 Test your work by calling the function four times with four different words and print the response. Make sure the response shows each of the four possible emojis.
 */
 
+func stringToEmojis (word: String) -> Character {
+    switch word {
+    case "happy":
+        return "😀"
+    case "laughing":
+        return "😆"
+    case "cool":
+        return "😎"
+    default:
+        return "🤔"
+    }
+}
 
+let emoji1 = stringToEmojis(word: "laughing")
+let emoji2 = stringToEmojis(word: "happy")
+let emoji3 = stringToEmojis(word: "cool")
+let emoji4 = stringToEmojis(word: "meh")
 
-
+print(emoji1)
+print(emoji2)
+print(emoji3)
+print(emoji4)
 
 /*:
 That emoji function was really good. Everyone is thinks this app will be huge!
